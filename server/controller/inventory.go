@@ -4,8 +4,8 @@ import (
 	"log"
 
 	"github.com/gofiber/fiber/v2"
-	"github.com/sidikimamsetiyawan/go-project-personal-blog/database"
-	"github.com/sidikimamsetiyawan/go-project-personal-blog/model"
+	"github.com/sidikimamsetiyawan/go-project-inventory/database"
+	"github.com/sidikimamsetiyawan/go-project-inventory/model"
 )
 
 // Blog List
@@ -18,7 +18,7 @@ func BlogList(c *fiber.Ctx) error {
 
 	db := database.DBConn
 
-	var records []model.Blog
+	var records []model.Categories
 
 	db.Find(&records)
 
@@ -36,7 +36,7 @@ func BlogCreate(c *fiber.Ctx) error {
 		"msg":        "Add a blog into database",
 	}
 
-	record := new(model.Blog)
+	record := new(model.Categories)
 
 	if err := c.BodyParser(&record); err != nil {
 		log.Println("Error in parsing request.")
@@ -69,11 +69,11 @@ func BlogUpdate(c *fiber.Ctx) error {
 
 	id := c.Params("id")
 
-	var record model.Blog
+	var record model.Categories
 
 	database.DBConn.First(&record, id)
 
-	if record.ID == 0 {
+	if record.CategoryID == 0 {
 		log.Println("Record not found.")
 		context[""] = ""
 		context["msg"] = "Record not found."
@@ -111,11 +111,11 @@ func BlogDelete(c *fiber.Ctx) error {
 
 	id := c.Params("id")
 
-	var record model.Blog
+	var record model.Categories
 
 	database.DBConn.First(&record, id)
 
-	if record.ID == 0 {
+	if record.CategoryID == 0 {
 		log.Println("Record not found.")
 		context["msg"] = "Record not found."
 

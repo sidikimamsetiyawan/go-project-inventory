@@ -4,7 +4,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/sidikimamsetiyawan/go-project-personal-blog/model"
+	"github.com/sidikimamsetiyawan/go-project-inventory/model"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
@@ -31,7 +31,7 @@ func ConnectDB() {
 
 	log.Println("Connection succesfully.")
 
-	db.AutoMigrate(new(model.Blog)) // Find uses model.blog link to github
+	db.AutoMigrate(new(model.Categories)) // Find uses model.blog link to github
 
 	DBConn = db
 }

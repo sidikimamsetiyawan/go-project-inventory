@@ -1,4 +1,4 @@
-module github.com/sidikimamsetiyawan/go-project-personal-blog
+module github.com/sidikimamsetiyawan/go-project-inventory
 
 go 1.20
 

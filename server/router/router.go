@@ -2,7 +2,7 @@ package router
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"github.com/sidikimamsetiyawan/go-project-personal-blog/controller"
+	"github.com/sidikimamsetiyawan/go-project-inventory/controller"
 )
 
 // Setup routing information
