@@ -31,7 +31,9 @@ func ConnectDB() {
 
 	log.Println("Connection succesfully.")
 
-	db.AutoMigrate(new(model.Categories)) // Find uses model.blog link to github
+	db.AutoMigrate(new(model.Categories)) // part create table base on model
+	db.AutoMigrate(new(model.Stocks))
+	db.AutoMigrate(new(model.Products))
 
 	DBConn = db
 }

@@ -12,8 +12,16 @@ func SetupRoutes(app *fiber.App) {
 	// Update => Put
 	// Delete => Delete
 
-	app.Get("/", controller.BlogList)
-	app.Post("/", controller.BlogCreate)
-	app.Put("/:id", controller.BlogUpdate)
-	app.Delete("/:id", controller.BlogDelete)
+	app.Get("/", controller.CategoryList)
+	app.Post("/", controller.CategoryCreate)
+	app.Put("/:id", controller.CategoryUpdate)
+	app.Delete("/:id", controller.CategoryDelete)
+
+	app.Get("/stocks", controller.StockList)
+	app.Post("/stocks", controller.StockCreate)
+	app.Put("/stocks/:id", controller.StockUpdate)
+	app.Delete("/stocks/:id", controller.StockDelete)
+
+	app.Get("/products", controller.ProductList)
+	app.Post("/products", controller.ProductCreate)
 }
